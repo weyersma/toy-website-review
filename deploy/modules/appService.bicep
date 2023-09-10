@@ -17,6 +17,8 @@ param processOrderQueueName string
   'prod'
 ])
 param environmentType string
+param environmentType2 string
+
 
 var appServicePlanName = 'toy-product-launch-plan'
 var appServicePlanSkuName = (environmentType == 'prod') ? 'P2_v3' : 'F1'
@@ -51,3 +53,4 @@ resource appServiceApp 'Microsoft.Web/sites@2022-03-01' = {
 }
 
 output appServiceAppHostName string = appServiceApp.properties.defaultHostName
+
